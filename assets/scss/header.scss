@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$app-color-bgc: rgb(10, 236, 85);
+$app-color-si: rgb(243, 161, 10);
+
+.header-card {
+  background-color: $app-color-bgc;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-family: "Silkscreen", cursive;
+    padding: 10px;
+    font-size: 2rem;
+    font-style: italic;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    margin-right: 15px;
+  }
+
+  &__lists {
+    margin-right: 10px;
+    font-size: 1.6rem;
+    padding: 8px;
+  }
+
+  &__lists:hover{
+    background-color: $app-color-si;
+    font-size: 1.8rem;
+    border: 1px solid $app-color-si;
+    transition: all ease-out 0.8s;
+  }
+
+  &__lists > a {
+    text-decoration: none;
+    color: rgb(15, 6, 100);
+    font-family: "Bebas Neue", cursive;
+  }
+  &__lists > a:hover{
+    color: rgb(240, 240, 243);
+  }
+}

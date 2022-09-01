@@ -1,26 +1,26 @@
-<header>
-      header page 
+<header class="header-card">
+      <h3 class="header-card__title">Codeial</h3>
 
-       <ul>
+       <ul class="header-card__items">
             <% if(locals.user) {%>
-            <li>
+            <li class="header-card__lists">
                   <a href="/user/profile">
                         <%= user.name %>
                   </a>
             </li>
-            <li>
+            <li class="header-card__lists">
                   <a href="/user/signOut">
                         Sign Out
                   </a>
             </li>
             <% }else {%>
 
-                  <li>
+                  <li class="header-card__lists">
                         <a href="/user/signIn">
                               Sign In
                         </a>
                   </li>
-                  <li>
+                  <li class="header-card__lists">
                         <a href="/user/signUp">
                               Sign Up
                         </a>

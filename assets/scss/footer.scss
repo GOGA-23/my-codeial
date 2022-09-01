@@ -1,0 +1,28 @@
+$font-color : rgb(10, 6, 6);
+
+.footer-card{
+  background-color: rgb(241, 200, 16);
+  color: $font-color;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+
+  &__li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__li li{
+    list-style-type: none;
+    margin-right: 15px;
+  }
+
+  &__li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: $font-color;
+  }
+}
