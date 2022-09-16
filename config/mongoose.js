@@ -7,5 +7,4 @@ async function main(){
   console.log("successfully connected to the database ");
 }
 
-
 module.exports = db;

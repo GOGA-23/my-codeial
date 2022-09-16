@@ -15,6 +15,9 @@
     padding: 10px;
     font-size: 2rem;
     font-style: italic; }
+    .header-card__title a {
+      text-decoration: none;
+      color: #0f0664; }
   .header-card__items {
     display: flex;
     justify-content: space-around;

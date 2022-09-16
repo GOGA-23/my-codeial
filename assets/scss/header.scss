@@ -8,6 +8,7 @@
 
 $app-color-bgc: rgb(10, 236, 85);
 $app-color-si: rgb(243, 161, 10);
+$app-color-co:  rgb(15, 6, 100);
 
 .header-card {
   background-color: $app-color-bgc;
@@ -21,6 +22,10 @@ $app-color-si: rgb(243, 161, 10);
     padding: 10px;
     font-size: 2rem;
     font-style: italic;
+      a{
+        text-decoration: none;
+        color: $app-color-co;
+      }
   }
 
   &__items {
@@ -46,7 +51,7 @@ $app-color-si: rgb(243, 161, 10);
 
   &__lists > a {
     text-decoration: none;
-    color: rgb(15, 6, 100);
+    color: $app-color-co;
     font-family: "Bebas Neue", cursive;
   }
   &__lists > a:hover{

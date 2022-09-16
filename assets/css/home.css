@@ -1,0 +1,30 @@
+#new-post {
+  margin: 15px;
+  padding: 15px; }
+  #new-post h4 {
+    font-size: 18px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500; }
+  #new-post textarea {
+    outline: none;
+    border: none;
+    background-color: #f3f1f1;
+    width: 350px;
+    height: 90px;
+    resize: none; }
+  #new-post .post-btn {
+    margin: -10px 8px;
+    padding: 8px;
+    background-color: #01ec63;
+    border: none;
+    font-size: 17px;
+    font-weight: 900;
+    cursor: pointer; }
+  #new-post #posts-lists ul {
+    list-style-type: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500; }
+  #new-post #posts-lists li {
+    display: flex;
+    flex-direction: column; }

@@ -1,10 +1,10 @@
 <header class="header-card">
-      <h3 class="header-card__title">Codeial</h3>
+      <h3 class="header-card__title"><a href="/">Codeial</a></h3>
 
        <ul class="header-card__items">
             <% if(locals.user) {%>
             <li class="header-card__lists">
-                  <a href="/user/profile">
+                  <a href="/user/profile/<%= user._id%>">
                         <%= user.name %>
                   </a>
             </li>
