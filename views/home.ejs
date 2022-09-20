@@ -26,15 +26,44 @@
   </div>
 </section>
 
-<section id="user-friends">
-  <h4>Friends</h4>
-  <% for (u of all_users) {%>
-    <p>
-        <a href="/user/profile/<%= u.id %>"><%= u.name%></a>
-    </p>
-    <% } %>
-</section>
+<aside id="user-details">
+  <section id="user-friends">
 
-<script src="/js/home_post_comments.js"></script>
+    <h4>Friends</h4>
+    <% for (u of all_users) {%>
+      <p>
+          <a href="/user/profile/<%= u.id %>"><%= u.name%></a>
+      </p>
+      <% } %>
+
+  </section>
+
+</aside>
+
+<% if(locals.user){ %>
+<section id="chatbox-container">
+  
+    <%-include ("_chatbox") %>
+
+</section>
+<% } %>
+
+
 <script src="/js/home_posts.js"></script>
+<script src="/js/home_post_comments.js"></script>
+<script src="/js/toggle_likes.js"></script>
+<script>
+    $('.toggle-like-button').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+
+<% if (locals.user) {%>
+<script>
+  new ChatEngine('chatbox-container', '<%= locals.user.email %>');
+</script>
+<% } %>
 

@@ -1,5 +1,8 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
+const commentsMailer = require("../mailers/comments_mailer");
+const queue = require('../config/kue');
+const commentEmailWorker = require('../workers/comment_email_worker');
 
 module.exports.create = async (req, res) => {
   try {
@@ -14,18 +17,30 @@ module.exports.create = async (req, res) => {
       post.comments.push(comment);
       post.save();
 
+      comment = await comment.populate('user', 'name email');
+      // commentsMailer.newComment(comment)
+      let job = queue.create('emails', comment).save((err)=>{
+        if(err){
+          console.log('error in creating a queue');
+          return;
+        }
+        console.log('job enquired',job.id);
+      });
+
+
       if (req.xhr) {
         // Similar for comments to fetch the user's id!
-        comment = await comment.populate('user', 'name');
-
+        
+        
         return res.status(200).json({
           data: {
             comment: comment
           },
           message: "Post created!"
         });
+       
       }
-
+      
       req.flash('success', 'Comment published!');
       return res.redirect('/');
     }
@@ -45,6 +60,8 @@ module.exports.destroy = async (req, res) => {
       comment.remove();
 
       let post = await Post.findByIdAndUpdate(postId, { $pull: { comments: req.params.id } });
+
+      await Like.deleteMany({likeable: comment._id, onModel: 'Comment'});
 
       // send the comment id which was deleted back to the views
       if (req.xhr) {

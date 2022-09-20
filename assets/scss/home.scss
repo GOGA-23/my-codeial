@@ -1,19 +1,18 @@
+$form-text: rgb(243, 241, 241);
+$form-btn: rgb(1, 236, 99);
 
-$form-text : rgb(243, 241, 241);
-$form-btn : rgb(1, 236, 99);
-
-
-
-#new-post{
-  margin: 15px;
-  padding: 15px;
-  h4{
+#new-post {
+  float: left;
+  width: 70%;
+  margin: 5px;
+  padding: 5px;
+  h4 {
     font-size: 18px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-weight: 500;
   }
 
-  textarea{
+  textarea {
     outline: none;
     border: none;
     background-color: $form-text;
@@ -22,7 +21,7 @@ $form-btn : rgb(1, 236, 99);
     resize: none;
   }
 
-  .post-btn{
+  .post-btn {
     margin: -10px 8px;
     padding: 8px;
     background-color: $form-btn;
@@ -32,21 +31,71 @@ $form-btn : rgb(1, 236, 99);
     cursor: pointer;
   }
 
-  #posts-lists ul{
+  #posts-lists ul {
     list-style-type: none;
     padding: 10px;
     font-size: 18px;
     font-weight: 500;
   }
 
-  #posts-lists li{
+  #posts-lists li {
     display: flex;
     flex-direction: column;
   }
-
-  #posts-lists{
-    
-  }
 }
 
+#chatbox-container {
+  position: fixed;
+  top: 75vh;
+  right: 1vw;
+  margin-bottom: 15px;
+  width: 250px;
+  height: 200px;
+  border: 2px dashed lightcoral;
+  background-color: #fff;
 
+  .chatbox-title {
+    background-color: rgb(19, 241, 56);
+    text-align: center;
+    font-size: 18px;
+  }
+
+  #chat-messages-list {
+    height: 140px;
+    overflow: scroll;
+  }
+
+  .other-message {
+    background-color: lightcoral;
+    width: 150px;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .self-message {
+    background-color: rgb(180, 76, 228);
+    width: 150px;
+    padding: 10px;
+    margin: 5px;
+    float: right;
+  }
+
+  #chatbox-form {
+    margin-left: 10px;
+  }
+
+  #content {
+    padding: 4px;
+    font-size: 13px;
+    outline: none;
+  }
+
+  #btn {
+    background-color: rgb(34, 85, 252);
+    color: aliceblue;
+    border: none;
+    width: 50px;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
