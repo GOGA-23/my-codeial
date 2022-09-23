@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+.header-card {
+  background-color: #0aec55;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .header-card__title {
+    font-family: "Silkscreen", cursive;
+    padding: 10px;
+    font-size: 2rem;
+    font-style: italic; }
+    .header-card__title a {
+      text-decoration: none;
+      color: #0f0664; }
+  .header-card__items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    margin-right: 15px; }
+  .header-card__lists {
+    margin-right: 10px;
+    font-size: 1.6rem;
+    padding: 8px; }
+  .header-card__lists:hover {
+    background-color: #f3a10a;
+    font-size: 1.8rem;
+    border: 1px solid #f3a10a;
+    transition: all ease-out 0.8s; }
+  .header-card__lists > a {
+    text-decoration: none;
+    color: #0f0664;
+    font-family: "Bebas Neue", cursive; }
+  .header-card__lists > a:hover {
+    color: #f0f0f3; }
