@@ -1,14 +1,11 @@
 
 const gulp = require('gulp');
 
-// const sass = require('gulp-sass');
 const sass = require('gulp-sass')(require('node-sass'));
 const cssnano = require('gulp-cssnano');
 const rev = require('gulp-rev');
-const uglify = require('gulp-uglify-es').default;
+const terser = require('gulp-terser');
 const imagemin = require('gulp-imagemin');
-const del = require('del');
-
 
 
 gulp.task('css', function(done){
@@ -33,7 +30,7 @@ gulp.task('css', function(done){
 gulp.task('js', function(done){
     console.log('minifying js...');
      gulp.src('./assets/**/*.js')
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(rev())
     .pipe(gulp.dest('./public/assets'))
     .pipe(rev.manifest({
@@ -61,13 +58,9 @@ gulp.task('images', function(done){
 
 
 
-gulp.task('clean:assets', function(done){
-   
-    del.sync(['./public/assets'], { force:true });
-    done();
-});
-
-gulp.task('build', gulp.series('clean:assets', 'css', 'js', 'images'), function(done){
+gulp.task('build', gulp.series( 'css', 'js', 'images'), function(done){
     console.log('Building assets');
     done();
 });
+
+
