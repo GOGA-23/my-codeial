@@ -4,6 +4,7 @@ module.exports.chatSockets = (socketServer)=>{
 
   // let io = require('socket.io')(socketServer);
   const io = require('socket.io')(socketServer, {
+    
     cors: {
       origin: '*',
     }
