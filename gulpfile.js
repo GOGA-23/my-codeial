@@ -6,6 +6,7 @@ const cssnano = require('gulp-cssnano');
 const rev = require('gulp-rev');
 const terser = require('gulp-terser');
 const imagemin = require('gulp-imagemin');
+const del = require('del');
 
 
 gulp.task('css', function(done){
@@ -56,6 +57,10 @@ gulp.task('images', function(done){
     done();
 });
 
+gulp.task('clean:assets', function(done){
+    del.sync(['./public/assets'], { force:true });
+    done();
+});
 
 
 gulp.task('build', gulp.series( 'css', 'js', 'images'), function(done){
